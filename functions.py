@@ -85,6 +85,7 @@ def start_profile(profile_number: int) -> webdriver.Chrome:
         options = Options()
         # Настраивает опции для подключения к удалённому браузеру
         options.add_experimental_option('debuggerAddress', selenium_port)
+        options.add_argument("--disable-blink-features=AutomationControlled")
 
         driver = webdriver.Chrome(options=options, service=service)
         return driver  # Возвращает объект драйвера браузера
